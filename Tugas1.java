@@ -1,9 +1,9 @@
 import java.util.Scanner;
-
 public class Tugas1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        double rataResponden = 0, rataPertanyaan = 0;
         int [][] survei = new int[10][6];
 
         for (int i = 0; i < survei.length; i++) {
@@ -34,6 +34,7 @@ public class Tugas1 {
                 }
             }
             System.out.printf("Nilai rata-rata responden ke-" + (i+1) + ": " + (totalPerResponden/6));
+            rataResponden += (totalPerResponden/6);
             System.out.println();
         }
         System.out.println("============================================================================");
@@ -45,10 +46,15 @@ public class Tugas1 {
             for (int i = 0; i < 10; i++) {
                 totalPerPertanyaan += survei[i][j];
             }
-            System.out.printf("Pertanyaan ke-" + (j + 1) + ": " + (totalPerPertanyaan/10));
-            System.out.println();
             System.out.println("======================================");
+            System.out.printf("Pertanyaan ke-" + (j + 1) + ": " + (totalPerPertanyaan/10));
+            rataPertanyaan += (totalPerPertanyaan/10);
+            System.out.println();
         }
+        
+        System.out.println("============================================================================");
+        System.out.println("Nilai rata-rata keseluruhan: " + ((rataPertanyaan / 6 + rataResponden / 10) / 2));
+        System.out.println("============================================================================");
         
         sc.close();
     }
