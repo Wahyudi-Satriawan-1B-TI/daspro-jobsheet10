@@ -20,17 +20,14 @@ public class Tugas1 {
             
             for (int j = 0; j < survei[i].length; j++) {
                 int input;
-                while (true) {
-                    System.out.print("Pertanyaan ke-" + (j + 1) + ": ");
-                    input = sc.nextInt();
+                System.out.print("Pertanyaan ke-" + (j + 1) + ": ");
+                input = sc.nextInt();
                     
-                    if (input >= 1 && input <= 5) {
-                        survei[i][j] = input;
-                        totalPerResponden += input;
-                        break;
-                    } else {
-                        System.out.println("Input tidak valid, masukkan angka antara 1 hingga 5.");
-                    }
+                if (input >= 1 && input <= 5) {
+                    survei[i][j] = input;
+                    totalPerResponden += input;
+                } else {
+                    System.out.println("Input tidak valid, masukkan angka antara 1 hingga 5.");
                 }
             }
             System.out.printf("Nilai rata-rata responden ke-" + (i+1) + ": " + (totalPerResponden/6));
